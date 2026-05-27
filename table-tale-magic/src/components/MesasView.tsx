@@ -33,6 +33,11 @@ const MesasView = ({ zona }: MesasViewProps) => {
         `}
       >
         <span className="text-base leading-tight">MESA {mesa.numeroMesa}</span>
+        {zona === "comedor" && (
+          <span className="text-[11px] sm:text-xs font-semibold opacity-90 leading-tight">
+            Comensales: {mesa.capacidad}
+          </span>
+        )}
         {isOcupada && comanda && (
           <span className="text-xs font-medium opacity-90">
             {comanda.total.toFixed(2)}€
