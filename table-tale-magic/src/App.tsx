@@ -10,6 +10,7 @@ import ComedorPage from "@/pages/ComedorPage";
 import MesaDetailPage from "@/pages/MesaDetailPage";
 import PagarPage from "@/pages/PagarPage";
 import AdminProductosPage from "@/pages/AdminProductosPage";
+import StockPage from "@/pages/StockPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/mesa/:id" element={<MesaDetailPage />} />
             <Route path="/pagar/:idComanda" element={<PagarPage />} />
             <Route path="/admin/productos" element={<AdminProductosPage />} />
+            <Route path="/admin/stock" element={<StockPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useRestaurant } from "@/context/useRestaurant";
-import { Clock, LogOut } from "lucide-react";
+import { Clock, LogOut, Package } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "@/assets/barCancelaLogo.png";
 
@@ -44,6 +44,16 @@ const AppHeader = () => {
         >
           {isBar ? "COMEDOR →" : "BAR →"}
         </button>
+
+        {empleadoActual?.rol === "admin" && (
+          <button
+            onClick={() => navigate("/admin/stock")}
+            className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-1.5 rounded-md bg-secondary text-secondary-foreground text-xs sm:text-sm font-medium hover:bg-accent transition-colors"
+          >
+            <Package size={16} />
+            <span>STOCK</span>
+          </button>
+        )}
 
         <button
           onClick={() => { logout(); navigate("/"); }}
